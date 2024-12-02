@@ -11,22 +11,10 @@ import UIKit
 
 struct ContentView: View {
     @State private var mokuroData: MokuroData? = nil
-    let imgWidth: CGFloat = 1488
-    let imgHeight: CGFloat = 2266
+//    let imgWidth: CGFloat = 1488
+//    let imgHeight: CGFloat = 2266
     
     var body: some View {
-        
-//        if let mokuroData = mokuroData {
-//                        // Use the mokuroData to display information
-//                        Text("Version: \(mokuroData.version)")
-//                        // For example, loop through blocks
-//                        ForEach(mokuroData.blocks, id: \.id) { block in
-//                            Text(block.lines.joined(separator: " "))
-//                        }
-//                    } else {
-//                        Text("Loading...")
-//                    }
-//        
         GeometryReader { geometry in
             // Ensure mokuroData is unwrapped safely
             if let mokuroData = mokuroData, let firstPage = mokuroData.pages.first {
@@ -56,6 +44,11 @@ struct ContentView: View {
         }
         .onAppear {
             loadMokuroData()
+            if let mokuroData = mokuroData {
+                print("Number of pages: \(mokuroData.pages.count)")
+            } else {
+                print("mokuroData is nil")
+            }
         }
     }
     
