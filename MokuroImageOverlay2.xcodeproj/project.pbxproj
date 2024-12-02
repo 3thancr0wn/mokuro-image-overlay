@@ -15,6 +15,7 @@
 		2DF641BA2CFD5BC4004C87E1 /* MokuroFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641B92CFD5BC4004C87E1 /* MokuroFileHandler.swift */; };
 		2DF641BC2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */; };
 		2DF641BE2CFDE315004C87E1 /* ScrollViewPaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */; };
+		2DF641C02CFDF202004C87E1 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641BF2CFDF202004C87E1 /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2DF641B92CFD5BC4004C87E1 /* MokuroFileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokuroFileHandler.swift; sourceTree = "<group>"; };
 		2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ラミアの黒魔術-20240726T054529Z-001.mokuro"; path = "MokuroImageOverlay2/ラミアの黒魔術-20240726T054529Z-001.mokuro"; sourceTree = "<group>"; };
 		2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPaging.swift; sourceTree = "<group>"; };
+		2DF641BF2CFDF202004C87E1 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				2DF641B12CFCA180004C87E1 /* MokuroData.swift */,
 				2DF641B92CFD5BC4004C87E1 /* MokuroFileHandler.swift */,
 				2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */,
+				2DF641BF2CFDF202004C87E1 /* PageView.swift */,
 			);
 			path = MokuroImageOverlay2;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF641A42CFCA092004C87E1 /* ContentView.swift in Sources */,
+				2DF641C02CFDF202004C87E1 /* PageView.swift in Sources */,
 				2DF641BE2CFDE315004C87E1 /* ScrollViewPaging.swift in Sources */,
 				2DF641BA2CFD5BC4004C87E1 /* MokuroFileHandler.swift in Sources */,
 				2DF641B22CFCA180004C87E1 /* MokuroData.swift in Sources */,
