@@ -16,28 +16,8 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            // Ensure mokuroData is unwrapped safely
-            if let mokuroData = mokuroData, let firstPage = mokuroData.pages.first {
-                let scaleX = geometry.size.width / firstPage.imgWidth
-                let scaleY = geometry.size.height / firstPage.imgHeight
-                
-                ZStack {
-                    // Background image (scaled to fit the geometry)
-                    Image("IMG_0525") // Assuming you have this image in your assets
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                    
-                    // Loop through blocks in the first page
-                    ForEach(firstPage.blocks) { block in
-                        let scaledBox = scaleBox(block.box, scaleX: scaleX, scaleY: scaleY)
-                        
-                        TategakiText(text: block.lines.joined(separator: "\n"))
-                            .font(.system(size: block.fontSize * min(scaleX, scaleY)))
-                            .frame(width: scaledBox.width, height: scaledBox.height)
-                            .position(x: scaledBox.midX, y: scaledBox.midY)
-                    }
-                }
+            if let mokuroData = mokuroData {
+                ScrollViewPaging(pages: mokuroData.pages)
             } else {
                 Text("No pages available")
             }
@@ -46,6 +26,7 @@ struct ContentView: View {
             loadMokuroData()
             if let mokuroData = mokuroData {
                 print("Number of pages: \(mokuroData.pages.count)")
+                print("mokuro image path: \(mokuroData.pages[83].imgPath)")
             } else {
                 print("mokuroData is nil")
             }
