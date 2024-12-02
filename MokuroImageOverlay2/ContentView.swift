@@ -10,95 +10,75 @@ import CoreText
 import UIKit
 
 struct ContentView: View {
+    @State private var mokuroData: MokuroData? = nil
     let imgWidth: CGFloat = 1488
     let imgHeight: CGFloat = 2266
     
-    let mokuroData = MokuroData(
-        version: "0.2.1",
-        imgWidth: 1488,
-        imgHeight: 2266,
-        blocks: [
-            MokuroBlock(
-                box: [1204, 948, 1260, 1177],
-                vertical: true,
-                fontSize: 55,
-                linesCoords: [
-                    [
-                        CGPoint(x: 1204, y: 949),
-                        CGPoint(x: 1259, y: 949),
-                        CGPoint(x: 1259, y: 1177),
-                        CGPoint(x: 1204, y: 1177)
-                    ]
-                ],
-                lines: ["あーあ．．．"]
-            ),
-            MokuroBlock(
-                box: [115, 1513, 359, 1814],
-                vertical: true,
-                fontSize: 52,
-                linesCoords: [
-                    [
-                        CGPoint(x: 303, y: 1515),
-                        CGPoint(x: 358, y: 1515),
-                        CGPoint(x: 358, y: 1672),
-                        CGPoint(x: 303, y: 1672)
-                    ],
-                    [
-                        CGPoint(x: 243, y: 1515),
-                        CGPoint(x: 296, y: 1515),
-                        CGPoint(x: 296, y: 1814),
-                        CGPoint(x: 243, y: 1814)
-                    ],
-                    [
-                        CGPoint(x: 186, y: 1518),
-                        CGPoint(x: 232, y: 1518),
-                        CGPoint(x: 232, y: 1814),
-                        CGPoint(x: 186, y: 1814)
-                    ],
-                    [
-                        CGPoint(x: 115, y: 1513),
-                        CGPoint(x: 168, y: 1513),
-                        CGPoint(x: 172, y: 1717),
-                        CGPoint(x: 119, y: 1717)
-                    ]
-                ],
-                lines: ["なんで", "こんなことに", "なっちゃった", "んだろ．．．"]
-            )
-        ],
-        imgPath: "IMG_0524"
-    )
-
-
     var body: some View {
+        
+//        if let mokuroData = mokuroData {
+//                        // Use the mokuroData to display information
+//                        Text("Version: \(mokuroData.version)")
+//                        // For example, loop through blocks
+//                        ForEach(mokuroData.blocks, id: \.id) { block in
+//                            Text(block.lines.joined(separator: " "))
+//                        }
+//                    } else {
+//                        Text("Loading...")
+//                    }
+//        
         GeometryReader { geometry in
-            let scaleX = geometry.size.width / imgWidth
-            let scaleY = geometry.size.height / imgHeight
-            
-            ZStack {
-                Image("IMG_05241")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
+            // Ensure mokuroData is unwrapped safely
+            if let mokuroData = mokuroData, let firstPage = mokuroData.pages.first {
+                let scaleX = geometry.size.width / firstPage.imgWidth
+                let scaleY = geometry.size.height / firstPage.imgHeight
                 
-                ForEach(mokuroData.blocks) { block in
-                    let scaledBox = scaleBox(block.box, scaleX: scaleX, scaleY: scaleY)
+                ZStack {
+                    // Background image (scaled to fit the geometry)
+                    Image("IMG_0525") // Assuming you have this image in your assets
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: geometry.size.width, height: geometry.size.height)
                     
-                    TategakiText(text: block.lines.joined(separator: "\n"))
-                        .font(.system(size: block.fontSize * min(scaleX, scaleY)))
-                        .frame(width: scaledBox.width, height: scaledBox.height)
-                        .position(x: scaledBox.midX, y: scaledBox.midY)
+                    // Loop through blocks in the first page
+                    ForEach(firstPage.blocks) { block in
+                        let scaledBox = scaleBox(block.box, scaleX: scaleX, scaleY: scaleY)
+                        
+                        TategakiText(text: block.lines.joined(separator: "\n"))
+                            .font(.system(size: block.fontSize * min(scaleX, scaleY)))
+                            .frame(width: scaledBox.width, height: scaledBox.height)
+                            .position(x: scaledBox.midX, y: scaledBox.midY)
+                    }
                 }
+            } else {
+                Text("No pages available")
             }
+        }
+        .onAppear {
+            loadMokuroData()
+        }
+    }
+    
+    func loadMokuroData() {
+        // Use MokuroFileHandler to read and decode the .mokuro file
+        if let fileURL = Bundle.main.url(forResource: "ラミアの黒魔術-20240726T054529Z-001", withExtension: "mokuro") {
+            if let loadedData = MokuroFileHandler.loadMokuroData(from: fileURL) {
+                self.mokuroData = loadedData
+            } else {
+                print("Failed to load .mokuro file.")
+            }
+        } else {
+            print("File not found in the bundle.")
         }
     }
 
     func scaleBox(_ box: [CGFloat], scaleX: CGFloat, scaleY: CGFloat) -> CGRect {
-        let x1 = box[0] * scaleX
-        let y1 = box[1] * scaleY
-        let x2 = box[2] * scaleX
-        let y2 = box[3] * scaleY
-        return CGRect(x: x1, y: y1, width: x2 - x1, height: y2 - y1)
-    }
+            let x = box[0] * scaleX
+            let y = box[1] * scaleY
+            let width = (box[2] - box[0]) * scaleX
+            let height = (box[3] - box[1]) * scaleY
+            return CGRect(x: x, y: y, width: width, height: height)
+        }
 }
 
 
