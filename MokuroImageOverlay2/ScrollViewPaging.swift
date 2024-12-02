@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ScrollViewPaging: View {
+    var pages: [Page]
+    
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 0) {
-                ForEach(0..<20) {index in
-                    Rectangle()
-                        .frame(width: 350, height: 620)
-                        .overlay(Text("\(index)").foregroundColor(.white))
-                        .frame(maxWidth: .infinity)
+                ForEach(pages, id: \.self) {page in
+//                    Rectangle()
+//                        .frame(width: 350, height: 620)
+//                        .overlay(Text("\(index)").foregroundColor(.white))
+//                        .frame(maxWidth: .infinity)
+//                        .padding(10)
+//                        .containerRelativeFrame(.horizontal, alignment: .center)
+                    PageView(page: page, imgWidth: page.imgWidth, imgHeight: page.imgHeight)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                         .padding(10)
-                        .containerRelativeFrame(.horizontal, alignment: .center)
                     
                 }
                 
@@ -31,6 +36,6 @@ struct ScrollViewPaging: View {
     }
 }
 
-#Preview {
-    ScrollViewPaging()
-}
+//#Preview {
+//    ScrollViewPaging(pages: <#[Page]#>, imgWidth: <#CGFloat#>, imgHeight: <#CGFloat#>)
+//}
