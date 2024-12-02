@@ -13,10 +13,61 @@ struct ContentView: View {
     let imgWidth: CGFloat = 1488
     let imgHeight: CGFloat = 2266
     
-    let mokuroData = MokuroData(blocks: [
-        MokuroBlock(box: [1204, 948, 1260, 1177], vertical: true, fontSize: 55, lines: ["あーあ．．．"]),
-        MokuroBlock(box: [115, 1513, 359, 1814], vertical: true, fontSize: 52, lines: ["なんで", "こんなことに", "なっちゃった", "んだろ．．．"])
-    ])
+    let mokuroData = MokuroData(
+        version: "0.2.1",
+        imgWidth: 1488,
+        imgHeight: 2266,
+        blocks: [
+            MokuroBlock(
+                box: [1204, 948, 1260, 1177],
+                vertical: true,
+                fontSize: 55,
+                linesCoords: [
+                    [
+                        CGPoint(x: 1204, y: 949),
+                        CGPoint(x: 1259, y: 949),
+                        CGPoint(x: 1259, y: 1177),
+                        CGPoint(x: 1204, y: 1177)
+                    ]
+                ],
+                lines: ["あーあ．．．"]
+            ),
+            MokuroBlock(
+                box: [115, 1513, 359, 1814],
+                vertical: true,
+                fontSize: 52,
+                linesCoords: [
+                    [
+                        CGPoint(x: 303, y: 1515),
+                        CGPoint(x: 358, y: 1515),
+                        CGPoint(x: 358, y: 1672),
+                        CGPoint(x: 303, y: 1672)
+                    ],
+                    [
+                        CGPoint(x: 243, y: 1515),
+                        CGPoint(x: 296, y: 1515),
+                        CGPoint(x: 296, y: 1814),
+                        CGPoint(x: 243, y: 1814)
+                    ],
+                    [
+                        CGPoint(x: 186, y: 1518),
+                        CGPoint(x: 232, y: 1518),
+                        CGPoint(x: 232, y: 1814),
+                        CGPoint(x: 186, y: 1814)
+                    ],
+                    [
+                        CGPoint(x: 115, y: 1513),
+                        CGPoint(x: 168, y: 1513),
+                        CGPoint(x: 172, y: 1717),
+                        CGPoint(x: 119, y: 1717)
+                    ]
+                ],
+                lines: ["なんで", "こんなことに", "なっちゃった", "んだろ．．．"]
+            )
+        ],
+        imgPath: "IMG_0524"
+    )
+
 
     var body: some View {
         GeometryReader { geometry in
@@ -29,7 +80,7 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.size.width, height: geometry.size.height)
                 
-                ForEach(mokuroData.blocks, id: \.self) { block in
+                ForEach(mokuroData.blocks) { block in
                     let scaledBox = scaleBox(block.box, scaleX: scaleX, scaleY: scaleY)
                     
                     TategakiText(text: block.lines.joined(separator: "\n"))
@@ -50,16 +101,7 @@ struct ContentView: View {
     }
 }
 
-struct MokuroData {
-    var blocks: [MokuroBlock]
-}
 
-struct MokuroBlock: Hashable {
-    let box: [CGFloat]
-    let vertical: Bool
-    let fontSize: CGFloat
-    let lines: [String]
-}
 
 public struct TategakiText: UIViewRepresentable {
     public var text: String?
