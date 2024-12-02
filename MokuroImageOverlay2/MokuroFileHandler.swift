@@ -5,20 +5,27 @@
 //  Created by ethan crown on 2024/12/02.
 //
 
+// MokuroFileHandler.swift
+
 import Foundation
 
-struct MokuroFileHandler {
-    static func readMokuroFile(filePath: String) -> MokuroData? {
+class MokuroFileHandler {
+    static func loadMokuroData(from fileURL: URL) -> MokuroData? {
         do {
-            let fileURL = URL(fileURLWithPath: filePath)
-            let data = try Data(contentsOf: fileURL)
             let decoder = JSONDecoder()
-            
-            // Adjust decoding strategy if needed
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(MokuroData.self, from: data)
+            let data = try Data(contentsOf: fileURL)
+            let decodedData = try decoder.decode(MokuroData.self, from: data)
+            return decodedData
         } catch {
-            print("Error reading .mokuro file: \(error)")
+            print("Error decoding JSON: \(error)")
+            if let decodingError = error as? DecodingError {
+                switch decodingError {
+                case .keyNotFound(let key, _):
+                    print("Missing key: \(key.stringValue)")
+                default:
+                    print("Decoding error: \(decodingError)")
+                }
+            }
             return nil
         }
     }
