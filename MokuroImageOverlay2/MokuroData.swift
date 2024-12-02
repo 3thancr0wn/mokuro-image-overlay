@@ -68,7 +68,7 @@ struct MokuroBlock: Identifiable, Hashable, Codable {
     }
 }
 
-struct Page: Codable {
+struct Page: Hashable, Codable {
     var version: String
     var imgWidth: CGFloat
     var imgHeight: CGFloat
