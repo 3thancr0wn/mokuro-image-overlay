@@ -17,7 +17,7 @@ struct MokuroUtils {
         return nil
     }
     
-    // Scale the block box coordinates
+    // Scale the block box coordinates based on page size
     static func scaleBox(_ box: [CGFloat], scaleX: CGFloat, scaleY: CGFloat) -> CGRect {
         let x = box[0] * scaleX
         let y = box[1] * scaleY

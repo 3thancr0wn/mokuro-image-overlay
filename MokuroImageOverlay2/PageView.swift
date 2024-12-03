@@ -41,7 +41,7 @@ struct PageView: View {
                 ForEach(page.blocks) { block in
                     let scaleX = geometry.size.width / imgWidth
                     let scaleY = geometry.size.height / imgHeight
-                    let scaledBox = scaleBox(block.box, scaleX: scaleX, scaleY: scaleY)
+                    let scaledBox = MokuroUtils.scaleBox(block.box, scaleX: scaleX, scaleY: scaleY)
                     
                     TategakiText(text: block.lines.joined(separator: "\n"))
                         .font(.system(size: block.fontSize * min(scaleX, scaleY)))
@@ -50,31 +50,6 @@ struct PageView: View {
                 }
             }
         }
-        .onAppear {
-            loadMokuroData()
-        }
-    }
-
-    // Load mokuro data
-    func loadMokuroData() {
-        if let fileURL = Bundle.main.url(forResource: "ラミアの黒魔術-20240726T054529Z-001", withExtension: "mokuro") {
-            if let loadedData = MokuroFileHandler.loadMokuroData(from: fileURL) {
-                self.mokuroData = loadedData
-            } else {
-                print("Failed to load .mokuro file.")
-            }
-        } else {
-            print("File not found in the bundle.")
-        }
-    }
-
-    // Scale the block box coordinates based on page size
-    func scaleBox(_ box: [CGFloat], scaleX: CGFloat, scaleY: CGFloat) -> CGRect {
-        let x = box[0] * scaleX
-        let y = box[1] * scaleY
-        let width = (box[2] - box[0]) * scaleX
-        let height = (box[3] - box[1]) * scaleY
-        return CGRect(x: x, y: y, width: width, height: height)
     }
 }
 
