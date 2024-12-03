@@ -13,13 +13,23 @@ struct PageView: View {
     var imgWidth: CGFloat
     var imgHeight: CGFloat
     
+    var resolvedImagePath: String? {
+        if let imgPath = page.imgPath?.trimmingCharacters(in: .whitespacesAndNewlines) {
+            // Normalize the extension to lowercase
+            let normalizedPath = imgPath.replacingOccurrences(of: ".PNG", with: ".png")
+            print("Normalized imgPath: \(normalizedPath)") // Debug print
+            return Bundle.main.url(forResource: normalizedPath, withExtension: nil)?.path
+        }
+        return nil
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 // Load the image using the imgPath in the page data
-                if let imgPath = page.imgPath,
-                   let imgURL = Bundle.main.url(forResource: imgPath, withExtension: "png") {
-                    Image(uiImage: UIImage(contentsOfFile: imgURL.path) ?? UIImage())
+                if let resolvedPath = resolvedImagePath {
+                    
+                    Image(uiImage: UIImage(contentsOfFile: resolvedPath) ?? UIImage())
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: geometry.size.width, height: geometry.size.height)
@@ -27,7 +37,6 @@ struct PageView: View {
                     Text("Image not found")
                         .foregroundColor(.red)
                 }
-                
                 // Loop through blocks on the page
                 ForEach(page.blocks) { block in
                     let scaleX = geometry.size.width / imgWidth
@@ -42,7 +51,6 @@ struct PageView: View {
             }
         }
         .onAppear {
-            // Ensure mokuroData is loaded here
             loadMokuroData()
         }
     }
