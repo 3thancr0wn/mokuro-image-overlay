@@ -19,6 +19,8 @@
 		2DF641C42CFE0B9D004C87E1 /* ラミアの黒魔術 in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */; };
 		2DF641C62CFEB6F1004C87E1 /* TategakiTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641C52CFEB6F1004C87E1 /* TategakiTextView.swift */; };
 		2DF641C82CFEB8DF004C87E1 /* MokuroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641C72CFEB8DF004C87E1 /* MokuroUtils.swift */; };
+		2DF641CA2CFF31E0004C87E1 /* PageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641C92CFF31DF004C87E1 /* PageLayout.swift */; };
+		2DF641CC2CFF3397004C87E1 /* BlockLayoutKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641CB2CFF3397004C87E1 /* BlockLayoutKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ラミアの黒魔術"; path = "MokuroImageOverlay2/ラミアの黒魔術"; sourceTree = "<group>"; };
 		2DF641C52CFEB6F1004C87E1 /* TategakiTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TategakiTextView.swift; sourceTree = "<group>"; };
 		2DF641C72CFEB8DF004C87E1 /* MokuroUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokuroUtils.swift; sourceTree = "<group>"; };
+		2DF641C92CFF31DF004C87E1 /* PageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLayout.swift; sourceTree = "<group>"; };
+		2DF641CB2CFF3397004C87E1 /* BlockLayoutKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLayoutKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				2DF641BF2CFDF202004C87E1 /* PageView.swift */,
 				2DF641C52CFEB6F1004C87E1 /* TategakiTextView.swift */,
 				2DF641C72CFEB8DF004C87E1 /* MokuroUtils.swift */,
+				2DF641C92CFF31DF004C87E1 /* PageLayout.swift */,
+				2DF641CB2CFF3397004C87E1 /* BlockLayoutKey.swift */,
 			);
 			path = MokuroImageOverlay2;
 			sourceTree = "<group>";
@@ -169,8 +175,10 @@
 				2DF641C62CFEB6F1004C87E1 /* TategakiTextView.swift in Sources */,
 				2DF641BE2CFDE315004C87E1 /* ScrollViewPaging.swift in Sources */,
 				2DF641BA2CFD5BC4004C87E1 /* MokuroFileHandler.swift in Sources */,
+				2DF641CA2CFF31E0004C87E1 /* PageLayout.swift in Sources */,
 				2DF641B22CFCA180004C87E1 /* MokuroData.swift in Sources */,
 				2DF641A22CFCA092004C87E1 /* MokuroImageOverlay2App.swift in Sources */,
+				2DF641CC2CFF3397004C87E1 /* BlockLayoutKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

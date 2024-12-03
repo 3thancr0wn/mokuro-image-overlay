@@ -9,27 +9,16 @@ import SwiftUI
 
 struct ScrollViewPaging: View {
     var pages: [Page]
-    
+
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 0) {
-                ForEach(pages, id: \.self) {page in
-                    PageView(page: page, imgWidth: page.imgWidth, imgHeight: page.imgHeight)
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .padding(10)
-                        .frame(maxWidth: .infinity)
-                        .containerRelativeFrame(.horizontal, alignment: .center)
-                }
+        TabView {
+            ForEach(pages, id: \.self) { page in
+                PageView(page: page)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
         }
-        .ignoresSafeArea()
-        .scrollTargetLayout()
-        .scrollTargetBehavior(.paging)
-        .scrollBounceBehavior(.basedOnSize)
-        .scrollIndicators(.hidden)
+        .tabViewStyle(.page(indexDisplayMode: .automatic))
+        .ignoresSafeArea() // For fullscreen presentation
     }
 }
 
-//#Preview {
-//    ScrollViewPaging(pages: <#[Page]#>, imgWidth: <#CGFloat#>, imgHeight: <#CGFloat#>)
-//}

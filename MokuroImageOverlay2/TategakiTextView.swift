@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import UIKit
 
 public class TategakiTextView: UIView {
@@ -85,5 +86,19 @@ public class TategakiTextView: UIView {
         context.stroke(rect)
     }
 
+}
 
+public struct TategakiText: UIViewRepresentable {
+    public var text: String?
+    
+    public func makeUIView(context: Context) -> TategakiTextView {
+        let uiView = TategakiTextView()
+        uiView.isOpaque = false
+        uiView.text = text
+        return uiView
+    }
+    
+    public func updateUIView(_ uiView: TategakiTextView, context: Context) {
+        uiView.text = text
+    }
 }

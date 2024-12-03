@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct PageView: View {
-    @State private var mokuroData: MokuroData? = nil
-    var page: Page  // This is a single page from mokuroData.pages
-    var imgWidth: CGFloat
-    var imgHeight: CGFloat
-    
+    var page: Page  // Single page from `MokuroData`
+
     var resolvedImagePath: String? {
         if let imgPath = page.imgPath?.trimmingCharacters(in: .whitespacesAndNewlines) {
             // Normalize the extension to lowercase
@@ -22,13 +19,12 @@ struct PageView: View {
         }
         return nil
     }
-    
+
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                // Load the image using the imgPath in the page data
+            ZStack(alignment: .center) {
+                // Render the page image
                 if let resolvedPath = resolvedImagePath {
-                    
                     Image(uiImage: UIImage(contentsOfFile: resolvedPath) ?? UIImage())
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -37,20 +33,17 @@ struct PageView: View {
                     Text("Image not found")
                         .foregroundColor(.red)
                 }
-                // Loop through blocks on the page
-                ForEach(page.blocks) { block in
-                    let scaleX = geometry.size.width / imgWidth
-                    let scaleY = geometry.size.height / imgHeight
-                    let scaledBox = MokuroUtils.scaleBox(block.box, scaleX: scaleX, scaleY: scaleY)
-                    
-                    TategakiText(text: block.lines.joined(separator: "\n"))
-                        .font(.system(size: block.fontSize * min(scaleX, scaleY)))
-                        .frame(width: scaledBox.width, height: scaledBox.height)
-                        .position(x: scaledBox.midX, y: scaledBox.midY)
+
+                // Render the blocks using PageLayout
+                PageLayout(imgWidth: CGFloat(page.imgWidth), imgHeight: CGFloat(page.imgHeight)) {
+                    ForEach(page.blocks) { block in
+                        TategakiText(text: block.lines.joined(separator: "\n"))
+                            .font(.system(size: block.fontSize))
+                            .layoutValue(key: BlockLayoutKey.self, value: block) // Attach block data
+                    }
                 }
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }
-
-
