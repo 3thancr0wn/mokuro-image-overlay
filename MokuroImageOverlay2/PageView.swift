@@ -16,8 +16,8 @@ struct PageView: View {
     var resolvedImagePath: String? {
         if let imgPath = page.imgPath?.trimmingCharacters(in: .whitespacesAndNewlines) {
             // Normalize the extension to lowercase
+            // TODO: needs to handle other img types
             let normalizedPath = imgPath.replacingOccurrences(of: ".PNG", with: ".png")
-            print("Normalized imgPath: \(normalizedPath)") // Debug print
             return Bundle.main.url(forResource: normalizedPath, withExtension: nil)?.path
         }
         return nil
@@ -78,9 +78,4 @@ struct PageView: View {
     }
 }
 
-
-//#Preview {
-//    let mockPage = mokuroData?.pages[83]  // Example: Select a page from mokuroData.pages
-//    PageView(page: mockPage!, imgWidth: mockPage?.imgWidth ?? 1488, imgHeight: mockPage?.imgHeight ?? 2266)
-//}
 

@@ -14,18 +14,12 @@ struct ScrollViewPaging: View {
         ScrollView(.horizontal) {
             HStack(spacing: 0) {
                 ForEach(pages, id: \.self) {page in
-//                    Rectangle()
-//                        .frame(width: 350, height: 620)
-//                        .overlay(Text("\(index)").foregroundColor(.white))
-//                        .frame(maxWidth: .infinity)
-//                        .padding(10)
-//                        .containerRelativeFrame(.horizontal, alignment: .center)
                     PageView(page: page, imgWidth: page.imgWidth, imgHeight: page.imgHeight)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                         .padding(10)
-                    
+                        .frame(maxWidth: .infinity)
+                        .containerRelativeFrame(.horizontal, alignment: .center)
                 }
-                
             }
         }
         .ignoresSafeArea()
