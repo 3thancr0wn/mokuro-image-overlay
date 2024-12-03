@@ -16,6 +16,7 @@
 		2DF641BC2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */; };
 		2DF641BE2CFDE315004C87E1 /* ScrollViewPaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */; };
 		2DF641C02CFDF202004C87E1 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641BF2CFDF202004C87E1 /* PageView.swift */; };
+		2DF641C42CFE0B9D004C87E1 /* ラミアの黒魔術 in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ラミアの黒魔術-20240726T054529Z-001.mokuro"; path = "MokuroImageOverlay2/ラミアの黒魔術-20240726T054529Z-001.mokuro"; sourceTree = "<group>"; };
 		2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPaging.swift; sourceTree = "<group>"; };
 		2DF641BF2CFDF202004C87E1 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ラミアの黒魔術"; path = "MokuroImageOverlay2/ラミアの黒魔術"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 		2DF641952CFCA092004C87E1 = {
 			isa = PBXGroup;
 			children = (
+				2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */,
 				2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */,
 				2DF641A02CFCA092004C87E1 /* MokuroImageOverlay2 */,
 				2DF6419F2CFCA092004C87E1 /* Products */,
@@ -140,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF641C42CFE0B9D004C87E1 /* ラミアの黒魔術 in Resources */,
 				2DF641BC2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro in Resources */,
 				2DF641A92CFCA094004C87E1 /* Preview Assets.xcassets in Resources */,
 				2DF641A62CFCA094004C87E1 /* Assets.xcassets in Resources */,
@@ -291,10 +295,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MokuroImageOverlay2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "MokuroImageOverlay2/ラミアの黒魔術 MokuroImageOverlay2/Preview\\ Content MokuroImageOverlay2/ラミアの黒魔術-20240726T054529Z-001.mokuro";
 				DEVELOPMENT_TEAM = NRX9TBQYUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mokuro Reader";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,10 +326,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MokuroImageOverlay2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "MokuroImageOverlay2/ラミアの黒魔術 MokuroImageOverlay2/Preview\\ Content MokuroImageOverlay2/ラミアの黒魔術-20240726T054529Z-001.mokuro";
 				DEVELOPMENT_TEAM = NRX9TBQYUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mokuro Reader";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
