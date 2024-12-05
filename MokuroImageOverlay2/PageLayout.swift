@@ -13,31 +13,36 @@ struct PageLayout: Layout {
     var imgHeight: CGFloat
 
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) -> CGSize {
-        // Use the provided image dimensions as a base reference
-        let width = proposal.width ?? imgWidth
-        let height = width * (imgHeight / imgWidth) // Maintain aspect ratio
-        return CGSize(width: width, height: height)
+        // Calculate dimensions while maintaining the image's aspect ratio
+        let aspectRatio = imgHeight / imgWidth
+        let proposedWidth = proposal.width ?? imgWidth
+        let proposedHeight = proposedWidth * aspectRatio
+
+        return CGSize(width: proposedWidth, height: proposedHeight)
     }
 
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) {
-        // Calculate scaling factors
-        let scaleX = bounds.size.width / imgWidth
-        let scaleY = bounds.size.height / imgHeight
+        let scaleX = bounds.width / imgWidth
+        let scaleY = bounds.height / imgHeight
         
-        // Place each subview based on its associated block data
-        for subview in subviews {
-            // Extract block-specific metadata (passed via subview's tag)
-            guard let block = subview[BlockLayoutKey.self] else { continue }
-            
-            let box = block.box
+        // Additional Y-offset to shift overlays downward
+        let yOffset: CGFloat = 130  // Adjust this value as needed
+        
+        for (index, subview) in subviews.enumerated() {
+            guard let block = subview[BlockLayoutKey.self] else {
+                print("[placeSubviews] Subview \(index + 1) missing BlockLayoutKey.")
+                continue
+            }
+
+            // Scale the block's bounding box for both X and Y
             let scaledBox = CGRect(
-                x: box[0] * scaleX,
-                y: box[1] * scaleY,
-                width: (box[2] - box[0]) * scaleX,
-                height: (box[3] - box[1]) * scaleY
+                x: block.box[0] * scaleX,
+                y: (block.box[1] * scaleY) + yOffset,  // Apply the Y offset here
+                width: (block.box[2] - block.box[0]) * scaleX,
+                height: (block.box[3] - block.box[1]) * scaleY
             )
-            
-            // Propose a size for the subview and position it within the scaled bounding box
+
+            // Position the subview based on the scaled bounding box
             subview.place(
                 at: CGPoint(x: scaledBox.midX, y: scaledBox.midY),
                 anchor: .center,
@@ -45,5 +50,12 @@ struct PageLayout: Layout {
             )
         }
     }
-}
+    func calculateYOffset(blocks: [MokuroBlock], scaleY: CGFloat) -> CGFloat {
+        guard !blocks.isEmpty else { return 0 }
 
+        // Calculate the average or minimum Y-coordinate of all blocks
+        let minY = blocks.map { $0.box[1] }.min() ?? 0
+        return minY * scaleY * 0.1 // Scale and adjust dynamically
+    }
+
+}

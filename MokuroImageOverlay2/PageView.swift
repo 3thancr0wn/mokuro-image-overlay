@@ -8,42 +8,76 @@
 import SwiftUI
 
 struct PageView: View {
-    var page: Page  // Single page from `MokuroData`
+    var page: Page
 
     var resolvedImagePath: String? {
         if let imgPath = page.imgPath?.trimmingCharacters(in: .whitespacesAndNewlines) {
-            // Normalize the extension to lowercase
-            // TODO: needs to handle other img types
             let normalizedPath = imgPath.replacingOccurrences(of: ".PNG", with: ".png")
-            return Bundle.main.url(forResource: normalizedPath, withExtension: nil)?.path
+            let imagePath = "01幼稚園Wars/\(imgPath)" + (imgPath.hasSuffix(".jpg") ? "" : ".jpg")
+            return Bundle.main.url(forResource: imagePath, withExtension: nil)?.path
         }
         return nil
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .center) {
-                // Render the page image
-                if let resolvedPath = resolvedImagePath {
-                    Image(uiImage: UIImage(contentsOfFile: resolvedPath) ?? UIImage())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                } else {
-                    Text("Image not found")
-                        .foregroundColor(.red)
-                }
+        ZStack(alignment: .center) {
+            // Display the image
+            if let resolvedPath = resolvedImagePath {
+                Image(uiImage: UIImage(contentsOfFile: resolvedPath) ?? UIImage())
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .layoutPriority(1) // Ensure image gets priority in layout
+                    .onAppear {
+                        logResolvedImagePath(resolvedPath: resolvedPath)
+                    }
+            } else {
+                Text("Image not found")
+                    .foregroundColor(.red)
+                    .onAppear {
+                        logError("Image not found for page.")
+                    }
+            }
 
-                // Render the blocks using PageLayout
-                PageLayout(imgWidth: CGFloat(page.imgWidth), imgHeight: CGFloat(page.imgHeight)) {
+            // Overlay layout using PageLayout
+            PageLayout(imgWidth: CGFloat(page.imgWidth), imgHeight: CGFloat(page.imgHeight)) {
+                if page.blocks.isEmpty {
+                    Text("No overlay blocks available")
+                        .foregroundColor(.gray)
+                        .onAppear {
+                            logError("No overlay blocks found.")
+                        }
+                } else {
                     ForEach(page.blocks) { block in
                         TategakiText(text: block.lines.joined(separator: "\n"))
                             .font(.system(size: block.fontSize))
-                            .layoutValue(key: BlockLayoutKey.self, value: block) // Attach block data
+                            .layoutValue(key: BlockLayoutKey.self, value: block)
+                            .onAppear {
+                                logBlockDetails(block: block)
+                            }
                     }
                 }
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
+
+    // Helper function for logging the resolved image path
+    private func logResolvedImagePath(resolvedPath: String) {
+        print("[PageView] Resolved Image Path: \(resolvedPath)")
+    }
+
+    // Helper function for logging errors
+    private func logError(_ message: String) {
+        print("[Error] \(message)")
+    }
+
+    // Helper function for logging block details
+    private func logBlockDetails(block: MokuroBlock) {
+        print("""
+        [Block]
+        Lines: \(block.lines.joined(separator: " "))
+        Font Size: \(block.fontSize)
+        Box: \(block.box)
+        """)
+    }
 }
+
