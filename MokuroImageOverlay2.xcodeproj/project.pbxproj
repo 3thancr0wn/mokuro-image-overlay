@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D3F2CA32D04813A00085A53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3F2CA22D04813A00085A53 /* Realm */; };
+		2D3F2CA52D04813A00085A53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3F2CA42D04813A00085A53 /* RealmSwift */; };
+		2D3F2CA72D04848D00085A53 /* DictionaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CA62D04848D00085A53 /* DictionaryEntry.swift */; };
+		2D3F2CA92D04888D00085A53 /* RealmDictionaryFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CA82D04888D00085A53 /* RealmDictionaryFormat.swift */; };
+		2D3F2CAB2D0488B700085A53 /* DictionaryFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CAA2D0488B700085A53 /* DictionaryFormat.swift */; };
+		2D3F2CAD2D048E4A00085A53 /* YomichanDictionaryFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CAC2D048E4A00085A53 /* YomichanDictionaryFormat.swift */; };
+		2D3F2CB02D0492F500085A53 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3F2CAF2D0492F500085A53 /* Zip */; };
+		2D3F2CB22D0494E100085A53 /* DictionaryFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CB12D0494E100085A53 /* DictionaryFrequency.swift */; };
+		2D3F2CB42D04956400085A53 /* DictionaryHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CB32D04956400085A53 /* DictionaryHeading.swift */; };
 		2DF641A22CFCA092004C87E1 /* MokuroImageOverlay2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641A12CFCA092004C87E1 /* MokuroImageOverlay2App.swift */; };
 		2DF641A42CFCA092004C87E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641A32CFCA092004C87E1 /* ContentView.swift */; };
 		2DF641A62CFCA094004C87E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641A52CFCA094004C87E1 /* Assets.xcassets */; };
@@ -29,9 +38,17 @@
 		2DF641D82CFFDE07004C87E1 /* ImageWithOutlineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641D72CFFDE07004C87E1 /* ImageWithOutlineLayout.swift */; };
 		2DF641DC2D014282004C87E1 /* PageViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641DB2D014282004C87E1 /* PageViewTest.swift */; };
 		2DF641DE2D0142CC004C87E1 /* PageLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641DD2D0142CC004C87E1 /* PageLayoutTest.swift */; };
+		2DF641E32D044B8D004C87E1 /* mokuro_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641E22D044B8C004C87E1 /* mokuro_model.swift */; };
+		2DF641E62D047592004C87E1 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641E52D047592004C87E1 /* Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D3F2CA62D04848D00085A53 /* DictionaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEntry.swift; sourceTree = "<group>"; };
+		2D3F2CA82D04888D00085A53 /* RealmDictionaryFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDictionaryFormat.swift; sourceTree = "<group>"; };
+		2D3F2CAA2D0488B700085A53 /* DictionaryFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryFormat.swift; sourceTree = "<group>"; };
+		2D3F2CAC2D048E4A00085A53 /* YomichanDictionaryFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YomichanDictionaryFormat.swift; sourceTree = "<group>"; };
+		2D3F2CB12D0494E100085A53 /* DictionaryFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryFrequency.swift; sourceTree = "<group>"; };
+		2D3F2CB32D04956400085A53 /* DictionaryHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHeading.swift; sourceTree = "<group>"; };
 		2DF6419E2CFCA092004C87E1 /* MokuroImageOverlay2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MokuroImageOverlay2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF641A12CFCA092004C87E1 /* MokuroImageOverlay2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokuroImageOverlay2App.swift; sourceTree = "<group>"; };
 		2DF641A32CFCA092004C87E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +72,8 @@
 		2DF641D72CFFDE07004C87E1 /* ImageWithOutlineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithOutlineLayout.swift; sourceTree = "<group>"; };
 		2DF641DB2D014282004C87E1 /* PageViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewTest.swift; sourceTree = "<group>"; };
 		2DF641DD2D0142CC004C87E1 /* PageLayoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLayoutTest.swift; sourceTree = "<group>"; };
+		2DF641E22D044B8C004C87E1 /* mokuro_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mokuro_model.swift; sourceTree = "<group>"; };
+		2DF641E52D047592004C87E1 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3F2CB02D0492F500085A53 /* Zip in Frameworks */,
+				2D3F2CA52D04813A00085A53 /* RealmSwift in Frameworks */,
+				2D3F2CA32D04813A00085A53 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +115,8 @@
 		2DF641A02CFCA092004C87E1 /* MokuroImageOverlay2 */ = {
 			isa = PBXGroup;
 			children = (
+				2DF641E42D04756F004C87E1 /* dictionary */,
+				2DF641E12D044AE9004C87E1 /* Models */,
 				2DF641A12CFCA092004C87E1 /* MokuroImageOverlay2App.swift */,
 				2DF641A32CFCA092004C87E1 /* ContentView.swift */,
 				2DF641A52CFCA094004C87E1 /* Assets.xcassets */,
@@ -121,6 +145,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2DF641E12D044AE9004C87E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DF641E22D044B8C004C87E1 /* mokuro_model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DF641E42D04756F004C87E1 /* dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				2DF641E52D047592004C87E1 /* Dictionary.swift */,
+				2D3F2CA62D04848D00085A53 /* DictionaryEntry.swift */,
+				2D3F2CA82D04888D00085A53 /* RealmDictionaryFormat.swift */,
+				2D3F2CAA2D0488B700085A53 /* DictionaryFormat.swift */,
+				2D3F2CAC2D048E4A00085A53 /* YomichanDictionaryFormat.swift */,
+				2D3F2CB12D0494E100085A53 /* DictionaryFrequency.swift */,
+				2D3F2CB32D04956400085A53 /* DictionaryHeading.swift */,
+			);
+			path = dictionary;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +183,11 @@
 			dependencies = (
 			);
 			name = MokuroImageOverlay2;
+			packageProductDependencies = (
+				2D3F2CA22D04813A00085A53 /* Realm */,
+				2D3F2CA42D04813A00085A53 /* RealmSwift */,
+				2D3F2CAF2D0492F500085A53 /* Zip */,
+			);
 			productName = MokuroImageOverlay2;
 			productReference = 2DF6419E2CFCA092004C87E1 /* MokuroImageOverlay2.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +216,10 @@
 				Base,
 			);
 			mainGroup = 2DF641952CFCA092004C87E1;
+			packageReferences = (
+				2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				2D3F2CAE2D0492F500085A53 /* XCRemoteSwiftPackageReference "Zip" */,
+			);
 			productRefGroup = 2DF6419F2CFCA092004C87E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,7 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3F2CA92D04888D00085A53 /* RealmDictionaryFormat.swift in Sources */,
 				2DF641D82CFFDE07004C87E1 /* ImageWithOutlineLayout.swift in Sources */,
+				2D3F2CB42D04956400085A53 /* DictionaryHeading.swift in Sources */,
+				2DF641E62D047592004C87E1 /* Dictionary.swift in Sources */,
 				2DF641A42CFCA092004C87E1 /* ContentView.swift in Sources */,
 				2DF641DE2D0142CC004C87E1 /* PageLayoutTest.swift in Sources */,
 				2DF641C02CFDF202004C87E1 /* PageView.swift in Sources */,
@@ -207,10 +265,15 @@
 				2DF641BA2CFD5BC4004C87E1 /* MokuroFileHandler.swift in Sources */,
 				2DF641DC2D014282004C87E1 /* PageViewTest.swift in Sources */,
 				2DF641D62CFFDDE0004C87E1 /* ImageTestView.swift in Sources */,
+				2D3F2CAD2D048E4A00085A53 /* YomichanDictionaryFormat.swift in Sources */,
 				2DF641CA2CFF31E0004C87E1 /* PageLayout.swift in Sources */,
 				2DF641B22CFCA180004C87E1 /* MokuroData.swift in Sources */,
+				2D3F2CA72D04848D00085A53 /* DictionaryEntry.swift in Sources */,
+				2D3F2CB22D0494E100085A53 /* DictionaryFrequency.swift in Sources */,
 				2DF641A22CFCA092004C87E1 /* MokuroImageOverlay2App.swift in Sources */,
+				2DF641E32D044B8D004C87E1 /* mokuro_model.swift in Sources */,
 				2DF641CC2CFF3397004C87E1 /* BlockLayoutKey.swift in Sources */,
+				2D3F2CAB2D0488B700085A53 /* DictionaryFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +483,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.51.0;
+			};
+		};
+		2D3F2CAE2D0492F500085A53 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D3F2CA22D04813A00085A53 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2D3F2CA42D04813A00085A53 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		2D3F2CAF2D0492F500085A53 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D3F2CAE2D0492F500085A53 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2DF641962CFCA092004C87E1 /* Project object */;
 }
