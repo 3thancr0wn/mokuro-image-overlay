@@ -58,7 +58,7 @@ class Dictionary: Object {
 }
 
 // Implement equality check
-extension Dictionary: Equatable {
+extension Dictionary {
     static func == (lhs: Dictionary, rhs: Dictionary) -> Bool {
         return lhs.name == rhs.name
     }
