@@ -47,9 +47,6 @@ extension DictionaryFormat {
   }
 }
 
-
-
-
 // supporting type
 struct PrepareDirectoryParams {
   // Define properties for PrepareDirectoryParams

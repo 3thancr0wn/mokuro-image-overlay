@@ -18,8 +18,8 @@ class DictionaryEntry: Object {
     @Persisted var popularity: Double
     @Persisted var headingTagNames: List<String> // Can be marked as @Ignored if not used
     @Persisted var entryTagNames: List<String> // Can be marked as @Ignored if not used
-    @Persisted var imagePaths: List<String>?
-    @Persisted var audioPaths: List<String>?
+    @Persisted var imagePaths: List<String>
+    @Persisted var audioPaths: List<String>
     @Persisted var extra: String?
 
     // Relationships (one-to-one) using @Persisted(relationship: .oneToOne)
