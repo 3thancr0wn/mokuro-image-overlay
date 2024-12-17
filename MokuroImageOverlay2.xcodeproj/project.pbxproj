@@ -7,18 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D3F2CA32D04813A00085A53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3F2CA22D04813A00085A53 /* Realm */; };
+		2D3F2CA52D04813A00085A53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3F2CA42D04813A00085A53 /* RealmSwift */; };
+		2D3F2CA72D04848D00085A53 /* DictionaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CA62D04848D00085A53 /* DictionaryEntry.swift */; };
+		2D3F2CA92D04888D00085A53 /* RealmDictionaryFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CA82D04888D00085A53 /* RealmDictionaryFormat.swift */; };
+		2D3F2CAB2D0488B700085A53 /* DictionaryFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CAA2D0488B700085A53 /* DictionaryFormat.swift */; };
+		2D3F2CAD2D048E4A00085A53 /* YomichanDictionaryFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CAC2D048E4A00085A53 /* YomichanDictionaryFormat.swift */; };
+		2D3F2CB02D0492F500085A53 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3F2CAF2D0492F500085A53 /* Zip */; };
+		2D3F2CB22D0494E100085A53 /* DictionaryFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CB12D0494E100085A53 /* DictionaryFrequency.swift */; };
+		2D3F2CB42D04956400085A53 /* DictionaryHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F2CB32D04956400085A53 /* DictionaryHeading.swift */; };
 		2DF641A22CFCA092004C87E1 /* MokuroImageOverlay2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641A12CFCA092004C87E1 /* MokuroImageOverlay2App.swift */; };
 		2DF641A42CFCA092004C87E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641A32CFCA092004C87E1 /* ContentView.swift */; };
 		2DF641A62CFCA094004C87E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641A52CFCA094004C87E1 /* Assets.xcassets */; };
 		2DF641A92CFCA094004C87E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641A82CFCA094004C87E1 /* Preview Assets.xcassets */; };
+		2DF641B22CFCA180004C87E1 /* MokuroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641B12CFCA180004C87E1 /* MokuroData.swift */; };
+		2DF641BA2CFD5BC4004C87E1 /* MokuroFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641B92CFD5BC4004C87E1 /* MokuroFileHandler.swift */; };
+		2DF641BC2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */; };
+		2DF641BE2CFDE315004C87E1 /* ScrollViewPaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */; };
+		2DF641C02CFDF202004C87E1 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641BF2CFDF202004C87E1 /* PageView.swift */; };
+		2DF641C42CFE0B9D004C87E1 /* ラミアの黒魔術 in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */; };
+		2DF641C62CFEB6F1004C87E1 /* TategakiTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641C52CFEB6F1004C87E1 /* TategakiTextView.swift */; };
+		2DF641C82CFEB8DF004C87E1 /* MokuroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641C72CFEB8DF004C87E1 /* MokuroUtils.swift */; };
+		2DF641CA2CFF31E0004C87E1 /* PageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641C92CFF31DF004C87E1 /* PageLayout.swift */; };
+		2DF641CC2CFF3397004C87E1 /* BlockLayoutKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641CB2CFF3397004C87E1 /* BlockLayoutKey.swift */; };
+		2DF641CF2CFF5908004C87E1 /* Yotsuba-to--01 in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641CD2CFF5907004C87E1 /* Yotsuba-to--01 */; };
+		2DF641D02CFF5908004C87E1 /* Yotsuba-to--01.mokuro in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641CE2CFF5907004C87E1 /* Yotsuba-to--01.mokuro */; };
+		2DF641D32CFF5EF8004C87E1 /* 01幼稚園Wars in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641D12CFF5EF8004C87E1 /* 01幼稚園Wars */; };
+		2DF641D42CFF5EF8004C87E1 /* 01幼稚園Wars.mokuro in Resources */ = {isa = PBXBuildFile; fileRef = 2DF641D22CFF5EF8004C87E1 /* 01幼稚園Wars.mokuro */; };
+		2DF641D62CFFDDE0004C87E1 /* ImageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641D52CFFDDE0004C87E1 /* ImageTestView.swift */; };
+		2DF641D82CFFDE07004C87E1 /* ImageWithOutlineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641D72CFFDE07004C87E1 /* ImageWithOutlineLayout.swift */; };
+		2DF641DC2D014282004C87E1 /* PageViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641DB2D014282004C87E1 /* PageViewTest.swift */; };
+		2DF641DE2D0142CC004C87E1 /* PageLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641DD2D0142CC004C87E1 /* PageLayoutTest.swift */; };
+		2DF641E32D044B8D004C87E1 /* mokuro_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641E22D044B8C004C87E1 /* mokuro_model.swift */; };
+		2DF641E62D047592004C87E1 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF641E52D047592004C87E1 /* Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D3F2CA62D04848D00085A53 /* DictionaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEntry.swift; sourceTree = "<group>"; };
+		2D3F2CA82D04888D00085A53 /* RealmDictionaryFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDictionaryFormat.swift; sourceTree = "<group>"; };
+		2D3F2CAA2D0488B700085A53 /* DictionaryFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryFormat.swift; sourceTree = "<group>"; };
+		2D3F2CAC2D048E4A00085A53 /* YomichanDictionaryFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YomichanDictionaryFormat.swift; sourceTree = "<group>"; };
+		2D3F2CB12D0494E100085A53 /* DictionaryFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryFrequency.swift; sourceTree = "<group>"; };
+		2D3F2CB32D04956400085A53 /* DictionaryHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHeading.swift; sourceTree = "<group>"; };
 		2DF6419E2CFCA092004C87E1 /* MokuroImageOverlay2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MokuroImageOverlay2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF641A12CFCA092004C87E1 /* MokuroImageOverlay2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokuroImageOverlay2App.swift; sourceTree = "<group>"; };
 		2DF641A32CFCA092004C87E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2DF641A52CFCA094004C87E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DF641A82CFCA094004C87E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2DF641B12CFCA180004C87E1 /* MokuroData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokuroData.swift; sourceTree = "<group>"; };
+		2DF641B92CFD5BC4004C87E1 /* MokuroFileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokuroFileHandler.swift; sourceTree = "<group>"; };
+		2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ラミアの黒魔術-20240726T054529Z-001.mokuro"; path = "MokuroImageOverlay2/ラミアの黒魔術-20240726T054529Z-001.mokuro"; sourceTree = "<group>"; };
+		2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPaging.swift; sourceTree = "<group>"; };
+		2DF641BF2CFDF202004C87E1 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ラミアの黒魔術"; path = "MokuroImageOverlay2/ラミアの黒魔術"; sourceTree = "<group>"; };
+		2DF641C52CFEB6F1004C87E1 /* TategakiTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TategakiTextView.swift; sourceTree = "<group>"; };
+		2DF641C72CFEB8DF004C87E1 /* MokuroUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokuroUtils.swift; sourceTree = "<group>"; };
+		2DF641C92CFF31DF004C87E1 /* PageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLayout.swift; sourceTree = "<group>"; };
+		2DF641CB2CFF3397004C87E1 /* BlockLayoutKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLayoutKey.swift; sourceTree = "<group>"; };
+		2DF641CD2CFF5907004C87E1 /* Yotsuba-to--01 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Yotsuba-to--01"; path = "MokuroImageOverlay2/Yotsuba-to--01"; sourceTree = "<group>"; };
+		2DF641CE2CFF5907004C87E1 /* Yotsuba-to--01.mokuro */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Yotsuba-to--01.mokuro"; path = "MokuroImageOverlay2/Yotsuba-to--01.mokuro"; sourceTree = "<group>"; };
+		2DF641D12CFF5EF8004C87E1 /* 01幼稚園Wars */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "01幼稚園Wars"; path = "MokuroImageOverlay2/01幼稚園Wars"; sourceTree = "<group>"; };
+		2DF641D22CFF5EF8004C87E1 /* 01幼稚園Wars.mokuro */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01幼稚園Wars.mokuro"; path = "MokuroImageOverlay2/01幼稚園Wars.mokuro"; sourceTree = "<group>"; };
+		2DF641D52CFFDDE0004C87E1 /* ImageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestView.swift; sourceTree = "<group>"; };
+		2DF641D72CFFDE07004C87E1 /* ImageWithOutlineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithOutlineLayout.swift; sourceTree = "<group>"; };
+		2DF641DB2D014282004C87E1 /* PageViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewTest.swift; sourceTree = "<group>"; };
+		2DF641DD2D0142CC004C87E1 /* PageLayoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLayoutTest.swift; sourceTree = "<group>"; };
+		2DF641E22D044B8C004C87E1 /* mokuro_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mokuro_model.swift; sourceTree = "<group>"; };
+		2DF641E52D047592004C87E1 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3F2CB02D0492F500085A53 /* Zip in Frameworks */,
+				2D3F2CA52D04813A00085A53 /* RealmSwift in Frameworks */,
+				2D3F2CA32D04813A00085A53 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +93,12 @@
 		2DF641952CFCA092004C87E1 = {
 			isa = PBXGroup;
 			children = (
+				2DF641D12CFF5EF8004C87E1 /* 01幼稚園Wars */,
+				2DF641D22CFF5EF8004C87E1 /* 01幼稚園Wars.mokuro */,
+				2DF641CD2CFF5907004C87E1 /* Yotsuba-to--01 */,
+				2DF641CE2CFF5907004C87E1 /* Yotsuba-to--01.mokuro */,
+				2DF641C32CFE0B9D004C87E1 /* ラミアの黒魔術 */,
+				2DF641BB2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro */,
 				2DF641A02CFCA092004C87E1 /* MokuroImageOverlay2 */,
 				2DF6419F2CFCA092004C87E1 /* Products */,
 			);
@@ -51,10 +115,23 @@
 		2DF641A02CFCA092004C87E1 /* MokuroImageOverlay2 */ = {
 			isa = PBXGroup;
 			children = (
+				2DF641E42D04756F004C87E1 /* dictionary */,
+				2DF641E12D044AE9004C87E1 /* Models */,
 				2DF641A12CFCA092004C87E1 /* MokuroImageOverlay2App.swift */,
 				2DF641A32CFCA092004C87E1 /* ContentView.swift */,
 				2DF641A52CFCA094004C87E1 /* Assets.xcassets */,
 				2DF641A72CFCA094004C87E1 /* Preview Content */,
+				2DF641B12CFCA180004C87E1 /* MokuroData.swift */,
+				2DF641B92CFD5BC4004C87E1 /* MokuroFileHandler.swift */,
+				2DF641BD2CFDE315004C87E1 /* ScrollViewPaging.swift */,
+				2DF641BF2CFDF202004C87E1 /* PageView.swift */,
+				2DF641C52CFEB6F1004C87E1 /* TategakiTextView.swift */,
+				2DF641C72CFEB8DF004C87E1 /* MokuroUtils.swift */,
+				2DF641C92CFF31DF004C87E1 /* PageLayout.swift */,
+				2DF641CB2CFF3397004C87E1 /* BlockLayoutKey.swift */,
+				2DF641D52CFFDDE0004C87E1 /* ImageTestView.swift */,
+				2DF641D72CFFDE07004C87E1 /* ImageWithOutlineLayout.swift */,
+				2DF641DB2D014282004C87E1 /* PageViewTest.swift */,
 			);
 			path = MokuroImageOverlay2;
 			sourceTree = "<group>";
@@ -63,8 +140,31 @@
 			isa = PBXGroup;
 			children = (
 				2DF641A82CFCA094004C87E1 /* Preview Assets.xcassets */,
+				2DF641DD2D0142CC004C87E1 /* PageLayoutTest.swift */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2DF641E12D044AE9004C87E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DF641E22D044B8C004C87E1 /* mokuro_model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DF641E42D04756F004C87E1 /* dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				2DF641E52D047592004C87E1 /* Dictionary.swift */,
+				2D3F2CA62D04848D00085A53 /* DictionaryEntry.swift */,
+				2D3F2CA82D04888D00085A53 /* RealmDictionaryFormat.swift */,
+				2D3F2CAA2D0488B700085A53 /* DictionaryFormat.swift */,
+				2D3F2CAC2D048E4A00085A53 /* YomichanDictionaryFormat.swift */,
+				2D3F2CB12D0494E100085A53 /* DictionaryFrequency.swift */,
+				2D3F2CB32D04956400085A53 /* DictionaryHeading.swift */,
+			);
+			path = dictionary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +183,11 @@
 			dependencies = (
 			);
 			name = MokuroImageOverlay2;
+			packageProductDependencies = (
+				2D3F2CA22D04813A00085A53 /* Realm */,
+				2D3F2CA42D04813A00085A53 /* RealmSwift */,
+				2D3F2CAF2D0492F500085A53 /* Zip */,
+			);
 			productName = MokuroImageOverlay2;
 			productReference = 2DF6419E2CFCA092004C87E1 /* MokuroImageOverlay2.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +216,10 @@
 				Base,
 			);
 			mainGroup = 2DF641952CFCA092004C87E1;
+			packageReferences = (
+				2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				2D3F2CAE2D0492F500085A53 /* XCRemoteSwiftPackageReference "Zip" */,
+			);
 			productRefGroup = 2DF6419F2CFCA092004C87E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +234,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF641D32CFF5EF8004C87E1 /* 01幼稚園Wars in Resources */,
+				2DF641D42CFF5EF8004C87E1 /* 01幼稚園Wars.mokuro in Resources */,
+				2DF641C42CFE0B9D004C87E1 /* ラミアの黒魔術 in Resources */,
+				2DF641CF2CFF5908004C87E1 /* Yotsuba-to--01 in Resources */,
+				2DF641D02CFF5908004C87E1 /* Yotsuba-to--01.mokuro in Resources */,
+				2DF641BC2CFD7C0B004C87E1 /* ラミアの黒魔術-20240726T054529Z-001.mokuro in Resources */,
 				2DF641A92CFCA094004C87E1 /* Preview Assets.xcassets in Resources */,
 				2DF641A62CFCA094004C87E1 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +252,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3F2CA92D04888D00085A53 /* RealmDictionaryFormat.swift in Sources */,
+				2DF641D82CFFDE07004C87E1 /* ImageWithOutlineLayout.swift in Sources */,
+				2D3F2CB42D04956400085A53 /* DictionaryHeading.swift in Sources */,
+				2DF641E62D047592004C87E1 /* Dictionary.swift in Sources */,
 				2DF641A42CFCA092004C87E1 /* ContentView.swift in Sources */,
+				2DF641DE2D0142CC004C87E1 /* PageLayoutTest.swift in Sources */,
+				2DF641C02CFDF202004C87E1 /* PageView.swift in Sources */,
+				2DF641C82CFEB8DF004C87E1 /* MokuroUtils.swift in Sources */,
+				2DF641C62CFEB6F1004C87E1 /* TategakiTextView.swift in Sources */,
+				2DF641BE2CFDE315004C87E1 /* ScrollViewPaging.swift in Sources */,
+				2DF641BA2CFD5BC4004C87E1 /* MokuroFileHandler.swift in Sources */,
+				2DF641DC2D014282004C87E1 /* PageViewTest.swift in Sources */,
+				2DF641D62CFFDDE0004C87E1 /* ImageTestView.swift in Sources */,
+				2D3F2CAD2D048E4A00085A53 /* YomichanDictionaryFormat.swift in Sources */,
+				2DF641CA2CFF31E0004C87E1 /* PageLayout.swift in Sources */,
+				2DF641B22CFCA180004C87E1 /* MokuroData.swift in Sources */,
+				2D3F2CA72D04848D00085A53 /* DictionaryEntry.swift in Sources */,
+				2D3F2CB22D0494E100085A53 /* DictionaryFrequency.swift in Sources */,
 				2DF641A22CFCA092004C87E1 /* MokuroImageOverlay2App.swift in Sources */,
+				2DF641E32D044B8D004C87E1 /* mokuro_model.swift in Sources */,
+				2DF641CC2CFF3397004C87E1 /* BlockLayoutKey.swift in Sources */,
+				2D3F2CAB2D0488B700085A53 /* DictionaryFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +406,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MokuroImageOverlay2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "MokuroImageOverlay2/ラミアの黒魔術-20240726T054529Z-001.mokuro MokuroImageOverlay2/ラミアの黒魔術 MokuroImageOverlay2/Preview\\ Content MokuroImageOverlay2/Yotsuba-to--01.mokuro MokuroImageOverlay2/Yotsuba-to--01 MokuroImageOverlay2/01幼稚園Wars MokuroImageOverlay2/01幼稚園Wars.mokuro";
 				DEVELOPMENT_TEAM = NRX9TBQYUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mokuro Reader";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -300,10 +437,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MokuroImageOverlay2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "MokuroImageOverlay2/ラミアの黒魔術-20240726T054529Z-001.mokuro MokuroImageOverlay2/ラミアの黒魔術 MokuroImageOverlay2/Preview\\ Content MokuroImageOverlay2/Yotsuba-to--01.mokuro MokuroImageOverlay2/Yotsuba-to--01 MokuroImageOverlay2/01幼稚園Wars MokuroImageOverlay2/01幼稚園Wars.mokuro";
 				DEVELOPMENT_TEAM = NRX9TBQYUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mokuro Reader";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +483,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.51.0;
+			};
+		};
+		2D3F2CAE2D0492F500085A53 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D3F2CA22D04813A00085A53 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2D3F2CA42D04813A00085A53 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D3F2CA12D04813A00085A53 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		2D3F2CAF2D0492F500085A53 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D3F2CAE2D0492F500085A53 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2DF641962CFCA092004C87E1 /* Project object */;
 }
